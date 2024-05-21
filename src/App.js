@@ -12,9 +12,12 @@ function App() {
   };
 
   return (
-    <div className='app-container'>
-      <Menu onChangeView={toggleView}/>
-      <Notes isListView={isListView}/>
+    <div className="app-container">
+      <Menu onChangeView={toggleView} />
+      <div className="note-container">
+        <h1>Notes App</h1>
+        <Notes isListView={isListView} />
+      </div>
     </div>
   );
 }
