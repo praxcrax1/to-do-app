@@ -24,7 +24,7 @@
   padding-top: 0;
   flex-direction: column;
   gap:15px;
-  height: 75em;
+  height: 75%;
 }
 
 .notesContainerList .addButton{
