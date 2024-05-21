@@ -21,7 +21,6 @@ function Menu({ onChangeView }) {
       </div>
       {isOpen && (
         <ul>
-          <li>Notes</li>
           <li onClick={onChangeView}>Change View</li>
         </ul>
       )}
