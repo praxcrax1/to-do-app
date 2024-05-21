@@ -1,8 +1,7 @@
 .notesContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-auto-rows: minmax(320px, auto);
-  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   padding: 40px;
   padding-top: 0;
   width: 100%;
@@ -15,16 +14,24 @@
   overflow: hidden;
   padding: 20px;   
   height: 292px;
+  width: 240px
 }
 
 .notesContainerList{
   display: flex;
   padding: 40px;
   padding-top: 0;
-  width: 100%;
   flex-direction: column;
   gap:15px;
   height: 75em;
+}
+
+.notesContainerList .addButton{
+  width: 104%;
+}
+
+.notesContainerList div{
+  width: 100%;
 }
 
 

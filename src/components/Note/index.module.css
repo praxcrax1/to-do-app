@@ -4,6 +4,7 @@
   overflow: hidden;
   padding: 20px;
   height: 250px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
