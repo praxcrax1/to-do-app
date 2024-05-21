@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import Notes from './components/Notes/index.jsx';
+import Menu from './components/Menu/index.jsx';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+
+  const [isListView, setIsListView] = useState(false);
+
+  const toggleView = () => {
+    setIsListView(!isListView);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app-container'>
+      <Menu onChangeView={toggleView}/>
+      <Notes isListView={isListView}/>
     </div>
   );
 }

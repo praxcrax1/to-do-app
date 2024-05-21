@@ -1,0 +1,56 @@
+.sideMenu{
+    width: 100px;
+    height: 100vh;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.135);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: width 0.3s; 
+    z-index: 999;
+}
+
+.menu{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.menu h4{
+  transform: translateY(7px);
+}
+
+
+.sideMenu.open {
+  width: 200px;
+  display: flex;
+}
+
+.burgerIcon {
+  background: none;
+  border: none;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 20px; 
+}
+
+.sideMenu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0 0; 
+  width: 100%;
+}
+
+.sideMenu li {
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.sideMenu li:hover {
+  background-color: rgba(0, 0, 0, 0.164);
+  border-radius: 10px;
+}
