@@ -44,3 +44,11 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.note h3:focus-visible{
+  outline-width: 0;
+}
+
+.note p:focus-visible{
+  outline-width: 0;
+}
