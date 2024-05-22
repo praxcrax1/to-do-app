@@ -19,7 +19,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
@@ -53,7 +54,7 @@
   "devDependencies": {
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "husky": "^9.0.11",
+    "husky": "^8.0.0",
     "lint-staged": "^15.2.2"
   }
 }
