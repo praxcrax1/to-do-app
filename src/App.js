@@ -1,18 +1,12 @@
 import Notes from './components/Notes/index.jsx';
 import Menu from './components/Menu/index.jsx';
 import './App.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import React from 'react';
 
 function App() {
 
-
   const [isListView, setIsListView] = useState(false);
-
-  useEffect(() => {
-    console.log("test");
-  },[]);
-  
 
   const toggleView = () => {
     setIsListView(!isListView);
