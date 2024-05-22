@@ -10,7 +10,8 @@ function App() {
   const [isListView, setIsListView] = useState(false);
 
   useEffect(() => {
-  });
+    console.log("test");
+  },[]);
   
 
   const toggleView = () => {
