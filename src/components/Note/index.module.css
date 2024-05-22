@@ -19,19 +19,15 @@
    width: calc(100% - 40px);
 }
 
-.note p {
-  margin: 0;
+.note textarea {
+  font-family: 'Poppins', 'sans-seriff';
+  resize: none;
+  background: none;
+  border: none;
+  width: 100%;
   font-size: 0.9em;
   color: #666;
   height: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5; /* Adjust the number of lines as needed */
-  line-clamp: 5;
-  flex-grow: 1; /* Allow the paragraph to take up remaining space */
-  height: auto; /* Make sure height is automatic based on content */
 }
 
 .note button {
@@ -50,6 +46,6 @@
   outline-width: 0;
 }
 
-.note p:focus-visible{
+.note textarea:focus-visible{
   outline-width: 0;
 }

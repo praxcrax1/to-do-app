@@ -1,6 +1,8 @@
-
+import React from "react";
 import style from "./index.module.css";
 import { useState } from 'react';
+import PropTypes from "prop-types";
+
 
 function Note({title, description,color, onDelete, onEdit}) {
 
@@ -18,12 +20,7 @@ function Note({title, description,color, onDelete, onEdit}) {
     }
 
 
-    const handleKeyDown = (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        handleSave();
-      }
-    };
+   
 
     const handleTitleInput = (e) => {
        setNewTitle(e.target.textContent);
@@ -43,7 +40,6 @@ function Note({title, description,color, onDelete, onEdit}) {
           contentEditable={isEditing}
           suppressContentEditableWarning={true}
           onBlur={handleBlur}
-          onKeyDown={handleKeyDown}
           onInput={handleTitleInput}>
           {title}
         </h3>
@@ -55,16 +51,23 @@ function Note({title, description,color, onDelete, onEdit}) {
           X
         </button>
       </div>
-      <p
+      <textarea
         contentEditable={isEditing}
         suppressContentEditableWarning={true}
         onBlur={handleBlur}
-        onKeyDown={handleKeyDown}
         onInput={handleDescriptionInput}>
         {description}
-      </p>
+      </textarea>
     </div>
   );
 }
+
+Note.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onEdit: PropTypes.func.isRequired,
+};
 
 export default Note

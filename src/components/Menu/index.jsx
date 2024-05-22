@@ -3,6 +3,7 @@ import style from './index.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
 import { useState } from 'react';
+import PropTypes from "prop-types";
 
 function Menu({ onChangeView }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,5 +28,9 @@ function Menu({ onChangeView }) {
     </nav>
   );
 }
+
+Menu.propTypes = {
+  onChangeView: PropTypes.func.isRequired,
+};
 
 export default Menu
