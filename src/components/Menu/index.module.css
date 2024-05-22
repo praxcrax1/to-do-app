@@ -26,6 +26,10 @@
   display: flex;
 }
 
+.sideMenu.open .menu{
+  margin-top: -10px;
+}
+
 .burgerIcon {
   background: none;
   border: none;
