@@ -16,7 +16,6 @@ export default function Notes({isListView}) {
 
   useEffect(() => {
     const storedNotes = localStorage.getItem("notesList");
-    console.log(storedNotes, "MOTES");
     if (storedNotes) {
       setNotesList(JSON.parse(storedNotes));
     } else {

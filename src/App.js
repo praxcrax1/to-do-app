@@ -5,6 +5,9 @@ import { useState } from 'react';
 
 function App() {
 
+  useEffect(() => {
+  });
+
   const [isListView, setIsListView] = useState(false);
 
   const toggleView = () => {
