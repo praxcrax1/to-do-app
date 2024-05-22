@@ -12,6 +12,7 @@ function Note({title, description,color, onDelete, onEdit}) {
 
     const handleSave = () => {
       onEdit(newTitle, newDescription);
+      console.log(newDescription);
       setIsEditing(false);
     };
 
@@ -20,14 +21,13 @@ function Note({title, description,color, onDelete, onEdit}) {
     }
 
 
-   
-
+  
     const handleTitleInput = (e) => {
        setNewTitle(e.target.textContent);
      };
 
     const handleDescriptionInput = (e) => {
-       setNewDescription(e.target.textContent);
+       setNewDescription(e.target.value);
      };
 
   return (
@@ -52,10 +52,10 @@ function Note({title, description,color, onDelete, onEdit}) {
         </button>
       </div>
       <textarea
+        onChange={handleDescriptionInput}
         contentEditable={isEditing}
         suppressContentEditableWarning={true}
-        onBlur={handleBlur}
-        onInput={handleDescriptionInput}>
+        onBlur={handleBlur}>
         {description}
       </textarea>
     </div>

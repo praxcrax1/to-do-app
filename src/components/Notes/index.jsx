@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import style from "./index.module.css";
 import Note from '../Note';
 import { useState } from 'react';
+import PropTypes from "prop-types";
+import { v4 as uuidv4 } from "uuid";
 
 function getRandomColor() {
   const r = Math.floor(Math.random() * 256);
@@ -21,16 +23,19 @@ export default function Notes({isListView}) {
     } else {
       setNotesList([
         {
+          id: uuidv4(),
           title: "Note 1",
           description: "Description for note 1",
           color: getRandomColor(),
         },
         {
+          id: uuidv4(),
           title: "Note 2",
           description: "Description for note 2",
           color: getRandomColor(),
         },
         {
+          id: uuidv4(),
           title: "Note 3",
           description: "Description for note 3",
           color: getRandomColor(),
@@ -46,6 +51,7 @@ export default function Notes({isListView}) {
 
   const addNote = () => {
     const newNote = {
+      id: uuidv4(),
       title: "New Note",
       description: "New Description",
       color: getRandomColor(),
@@ -53,19 +59,18 @@ export default function Notes({isListView}) {
     setNotesList([...notesList, newNote]);
   };
 
-  const deleteNote = (index) => {
-    const newNotesList = notesList.filter((_, i) => i !== index);
+  const deleteNote = (id) => {
+    const newNotesList = notesList.filter((note) => note.id !== id);
     setNotesList(newNotesList);
   };
 
-  const editNote = (index, newTitle, newDescription) => {
-    const newNotesList = notesList.map((note, i) =>
-      i === index
+  const editNote = (id, newTitle, newDescription) => {
+    const newNotesList = notesList.map(note =>
+      note.id === id
         ? { ...note, title: newTitle, description: newDescription }
         : note
     );
     setNotesList(newNotesList);
-    console.log(notesList);
   };
 
   return (
@@ -73,14 +78,14 @@ export default function Notes({isListView}) {
       className={
         isListView ? style.notesContainerList : style.notesContainer
       }>
-      {notesList.map((note, index) => (
+      {notesList.map(note => (
         <Note
-          key={index}
+          key={note.id}
           title={note.title}
           description={note.description}
-          onDelete={() => deleteNote(index)}
+          onDelete={() => deleteNote(note.id)}
           onEdit={(newTitle, newDescription) =>
-            editNote(index, newTitle, newDescription)
+            editNote(note.id, newTitle, newDescription)
           }
           color={note.color}
         />
@@ -90,7 +95,12 @@ export default function Notes({isListView}) {
       </button>
     </div>
   );
+
 }
+
+Notes.propTypes = {
+  isListView: PropTypes.bool.isRequired,
+};
 
 
 
